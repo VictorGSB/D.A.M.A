@@ -208,10 +208,86 @@ function soma(){
 
 //8
 
+function NumConta(){
+
+    let conta = prompt("Digite o número da conta:");
+
+    let soma = 0;
+    for (let i = 0; i < conta.length; i++) {
+      soma += parseInt(conta.charAt(i));
+    }
+    
+    let digito = soma % 10;
+    
+    if(conta <= 9999){
+
+        return("Número de conta completo: " + "00" + conta + "-" + digito);
+
+    }else if(conta <= 99999){
+
+        return("Número de conta completo: " + "0" + conta + "-" + digito);
+
+    } else if(conta <= 999999){
+
+        return("Número de conta completo: "+ conta + "-" + digito);
+
+    }else if( conta > 999999){
+
+        return("Essa conta nao exite :(");
+
+    }
+    
+
+}
+
+//9
+function habitantes(h){
+
+    let homem = prompt("Quantos homens foram entrvistados: ")
+    let mulher = prompt("Quantas mulheres foram entrvistadas: ")
+    let salariototal = 0
+    let entrevistado = mulher + homem
+    let menorIdade;
+    let maiorIdade;
+
+    for(let i = 0; i = entrevistado.length; i++){
+
+
+        let salario = Number(prompt(`Digite o salario do ${i}° participante` ))
+
+        salariototal = salario + salariototal
+
+    }
+
+    let mediaGrupo = salariototal / entrevistado
+
+     for(let j = 0; j = entrevistado.length; j++){
+
+        idade = Number(prompt(`Digite a idade do ${i}° participante`))
+
+        if (idade[i] < idade[i]){
+
+            menorIdade = idade
+
+
+        }else if(idade[i] > idade[i]){
+
+            maiorIdade = idade
+        }
+     }
+
+
+
+
+
+
+}
+
+
 
 
 
 module.exports = {
-    salario1, automovel, matricula, triangulo, numeros, provas, soma
+    salario1, automovel, matricula, triangulo, numeros, provas, soma, NumConta, habitantes
 }
 
