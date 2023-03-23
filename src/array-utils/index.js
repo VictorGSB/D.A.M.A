@@ -1,6 +1,7 @@
+const prompt = require("prompt-sync")()
 function salario1(){
 
-    let salario = parseFloat(prompt("Digite seu salario: "))
+    let salario = Number(prompt("Digite seu salario: "))
 
     let salarioD1 = salario * 0.1
     
@@ -10,7 +11,7 @@ function salario1(){
 
     let salarioLiquido = salarioBase - salarioD2
     
-    
+    return ("Seu salario liquido é: "+ salarioLiquido.toFixed(2))    
 }
 
 module.exports = {
