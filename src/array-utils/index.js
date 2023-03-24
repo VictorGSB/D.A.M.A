@@ -241,43 +241,56 @@ function NumConta(){
 }
 
 //9
-function habitantes(h){
+function habitantes(){
 
-    let homem = prompt("Quantos homens foram entrvistados: ")
-    let mulher = prompt("Quantas mulheres foram entrvistadas: ")
-    let salariototal = 0
-    let entrevistado = mulher + homem
-    let menorIdade;
-    let maiorIdade;
+        
+        while(idade >= 0){
 
-    for(let i = 0; i = entrevistado.length; i++){
+            let sexo = prompt(`Digite o sexo do ${i}° participante (0 para homens e 1 para mulheres): `)
+            let salario = Number(prompt(`Digite o salario do ${i}° participante: ` ))
+            let idade = Number (prompt(`Disgite a idade do ${i}° participante: `))
+            
+        if(sexo == "0"){
+
+            homens++
+
+        }else if(sexo == "1"){
+
+            mulher++
+
+        }else {
+
+        }
+
+        let salarioTotal = salario + salario[i]
 
 
-        let salario = Number(prompt(`Digite o salario do ${i}° participante` ))
+        }
 
-        salariototal = salario + salariototal
+        let entrevistados = homens + mulher
+        
+        let media = salarioTotal/ entrevistado
+            
+
+}
+
+//10
+function frase(){
+
+    let palavra = prompt("Digite uma palavra: ")
+
+    let ap = 0
+    let ag = 0 
+
+    for(let i = 0; i = palavra.length; i++) {
+
+        if(palavra[i] == "a"){
+
+            ap++
+
+        }
 
     }
-
-    let mediaGrupo = salariototal / entrevistado
-
-     for(let j = 0; j = entrevistado.length; j++){
-
-        idade = Number(prompt(`Digite a idade do ${i}° participante`))
-
-        if (idade[i] < idade[i]){
-
-            menorIdade = idade
-
-
-        }else if(idade[i] > idade[i]){
-
-            maiorIdade = idade
-        }
-     }
-
-
-
 
 
 
@@ -290,4 +303,3 @@ function habitantes(h){
 module.exports = {
     salario1, automovel, matricula, triangulo, numeros, provas, soma, NumConta, habitantes
 }
-

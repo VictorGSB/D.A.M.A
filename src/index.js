@@ -1,4 +1,4 @@
-const {salario1,automovel,matricula, triangulo, numeros, provas, soma, NumConta, habitantes} = require('/Projetos VS/Lista/src/array-utils')
+const {salario1,automovel,matricula, triangulo, numeros, provas, soma, NumConta, habitantes} = require('./array-utils')
 //1
 const salarioT = salario1
 
@@ -27,4 +27,3 @@ const conta = NumConta
 const entrevistado = habitantes
 
 console.log( entrevistado())
-
