@@ -279,10 +279,8 @@ function habitantes(){
     
     const mediaSalario = somaSalario / qtdePessoas;
     
-    console.log(`Média de salário do grupo: R$${mediaSalario.toFixed(2)}`);
-    console.log(`Maior idade do grupo: ${maiorIdade} anos`);
-    console.log(`Menor idade do grupo: ${menorIdade} anos`);
-    console.log(`Quantidade de mulheres com salário até R$100,00: ${qtdeMulheresSalarioBaixo}`);
+    return(`Média de salário do grupo: R$${mediaSalario.toFixed(2)}/ Maior idade do grupo: ${maiorIdade} anos/ Menor idade do grupo: ${menorIdade} anos/ Quantidade de mulheres com salário até R$100,00: ${qtdeMulheresSalarioBaixo}`);
+    
 
 }           
 
