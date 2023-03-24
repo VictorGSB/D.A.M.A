@@ -1,3 +1,4 @@
+const { frase, letraJ } = require('./array-utils')
 const {salario1,automovel,matricula, triangulo, numeros, provas, soma, NumConta, habitantes} = require('./array-utils')
 //1
 const salarioT = salario1
@@ -26,4 +27,10 @@ const conta = NumConta
 //9
 const entrevistado = habitantes
 
-console.log( entrevistado())
+//10
+const palavras = frase
+
+//11
+const letra = letraJ
+
+console.log(entrevistado())

@@ -160,7 +160,7 @@ function provas(){
 
         return(`Parabens voce foi aprovado, sua media foi de ${media.toFixed(2)}`)
 
-    }else if(matematica <= reprovado && portugues <= reprovado && conhecimentosGerais <= reprovado){
+    }else if(matematica < reprovado || portugues < reprovado || conhecimentosGerais < reprovado){
 
         return(`Voce foi reprovado..., sua media foi de ${media.toFixed(2)}`)
 
@@ -243,36 +243,50 @@ function NumConta(){
 //9
 function habitantes(){
 
+
+    let somaSalario = 0
+    let maiorIdade = 0
+    let menorIdade = Infinity
+    let qtdeMulheresSalarioBaixo = 0
+    let qtdePessoas = 0
+    
+    while (true) {
         
-        while(idade >= 0){
+      const idade = parseInt(prompt("Digite a idade (ou um número negativo para sair):"));
 
-            let sexo = prompt(`Digite o sexo do ${i}° participante (0 para homens e 1 para mulheres): `)
-            let salario = Number(prompt(`Digite o salario do ${i}° participante: ` ))
-            let idade = Number (prompt(`Disgite a idade do ${i}° participante: `))
-            
-        if(sexo == "0"){
+      if (idade < 0) {
+        break;
+      }
+    
+      const sexo = parseInt(prompt("Digite o sexo (0 para masculino, 1 para feminino):"));
+      const salario = parseFloat(prompt("Digite o salário:"));
+    
+      somaSalario += salario;
+      qtdePessoas++;
+    
+      if (idade > maiorIdade) {
+        maiorIdade = idade;
+      }
+    
+      if (idade < menorIdade) {
+        menorIdade = idade;
+      }
+    
+      if (sexo === 1 && salario <= 100) {
+        qtdeMulheresSalarioBaixo++;
+      }
+    }
+    
+    const mediaSalario = somaSalario / qtdePessoas;
+    
+    console.log(`Média de salário do grupo: R$${mediaSalario.toFixed(2)}`);
+    console.log(`Maior idade do grupo: ${maiorIdade} anos`);
+    console.log(`Menor idade do grupo: ${menorIdade} anos`);
+    console.log(`Quantidade de mulheres com salário até R$100,00: ${qtdeMulheresSalarioBaixo}`);
 
-            homens++
-
-        }else if(sexo == "1"){
-
-            mulher++
-
-        }else {
-
-        }
-
-        let salarioTotal = salario + salario[i]
+}           
 
 
-        }
-
-        let entrevistados = homens + mulher
-        
-        let media = salarioTotal/ entrevistado
-            
-
-}
 
 //10
 function frase(){
@@ -282,18 +296,46 @@ function frase(){
     let ap = 0
     let ag = 0 
 
-    for(let i = 0; i = palavra.length; i++) {
+    for(let i = 0; i < palavra.length; i++) {
 
-        if(palavra[i] == "a"){
+        if(palavra[i] == 'a'){
 
             ap++
 
-        }
+            
 
+        }else if(palavra[i] == "A"){
+
+            ag++
+
+        }else {
+
+        }  
+        
     }
+    return(`Foram digitados ${ap} letra(s) (a) e ${ag} leta(s) (A) `)
 
 
+}
 
+//11
+
+function letraJ(){
+
+    let frase = prompt("Digite uma frase: ")
+
+    let j = frase.indexOf("j")
+
+        if(j === -1){
+
+            return ("A letra 'j' não foi encontrada na frase")
+
+        }else{
+            return (`A letra j esta na posição ${j + 1} da frase`)
+        }
+    
+        // o + 1 foi adicionado para que as posiçoes nao fique em numeros naturais pois se nao acrecentar a palavra 
+        // jogo por exemplo, o j de jogo apareceria na posição 0 e nao na 1 ai por motivos de estetica eu coloquei o + 1
 }
 
 
@@ -301,5 +343,5 @@ function frase(){
 
 
 module.exports = {
-    salario1, automovel, matricula, triangulo, numeros, provas, soma, NumConta, habitantes
+    salario1, automovel, matricula, triangulo, numeros, provas, soma, NumConta, habitantes, frase, letraJ
 }
