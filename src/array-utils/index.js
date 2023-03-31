@@ -51,6 +51,7 @@ function matricula(){
 
         return("Matricula invalida...")
     }
+    return (`O ano de matricula foi em ${ano}`)
 
 }
 
